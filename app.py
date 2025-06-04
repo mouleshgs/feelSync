@@ -4,10 +4,13 @@ from utils.transcriber import transcribe_audio
 from utils.spotify_api import get_spotify_token, search_playlist_by_genre
 from utils.emotion_classifier import get_emotion_classifier, classify_emotion
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Spotify credentials
-CLIENT_ID = "c826b12cf2b749ad83a5006cf8919242"
-CLIENT_SECRET = "68d9fac62d614e37bcd0083e9375ff7d"
+CLIENT_ID = os.getenv("SPOTIFY_CLIENT_ID")
+CLIENT_SECRET = os.getenv("SPOTIFY_CLIENT_SECRET")
 
 st.title("🎧 FeelSync")
 
