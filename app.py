@@ -29,15 +29,36 @@ if st.button("Start Recording for 7 seconds"):
     st.write(f"🎭 **Detected Emotion:** {emotion_label}")
 
     emotion_to_genre = {
-        "positive": "tamil motivation",
-        "negative": "tamil sad",
-        "neutral": "tamil chill",
-        "joy": "tamil feel good",
-        "sadness": "tamil sad",
-        "anger": "tamil energetic",
-        "fear": "tamil chill",
-        "surprise": "tamil pop",
+    "admiration": "tamil feel good",
+    "amusement": "tamil comedy",
+    "anger": "tamil energetic",
+    "annoyance": "tamil intense",
+    "approval": "tamil motivation",
+    "caring": "tamil melody",
+    "confusion": "tamil chill",
+    "curiosity": "tamil lofi",
+    "desire": "tamil romantic",
+    "disappointment": "tamil sad",
+    "disapproval": "tamil dark",
+    "disgust": "tamil intense",
+    "embarrassment": "tamil lofi",
+    "excitement": "tamil celebration",
+    "fear": "tamil chill",
+    "gratitude": "tamil devotional",
+    "grief": "tamil sad",
+    "joy": "tamil feel good",
+    "love": "tamil romantic",
+    "nervousness": "tamil chill",
+    "optimism": "tamil motivation",
+    "pride": "tamil anthem",
+    "realization": "tamil melody",
+    "relief": "tamil feel good",
+    "remorse": "tamil sad",
+    "sadness": "tamil sad",
+    "surprise": "tamil pop",
+    "neutral": "tamil chill"
     }
+
     genre = emotion_to_genre.get(emotion_label, "tamil chill")
 
     with st.spinner("🎵 Searching Spotify playlist..."):
