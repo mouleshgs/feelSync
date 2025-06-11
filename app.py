@@ -28,20 +28,17 @@ if st.button("🎙️ Start Recording (7 seconds)"):
     with st.spinner("📝 Transcribing and Translating Tamil to English..."):
         tamil_text, english_text = transcribe_audio(audio_file)
 
-    # Display transcription
     st.markdown("### 🗣️ Transcription Output")
     st.markdown(f"**📝 Tamil Text:** `{tamil_text}`")
     st.markdown(f"**🌍 English Translation:** `{english_text}`")
     st.markdown("---")
 
-    # Emotion detection
     with st.spinner("🎭 Detecting emotion from translated text..."):
         classifier = get_emotion_classifier()
         emotion_label = classify_emotion(classifier, english_text)
 
     st.markdown(f"### 🎭 Detected Emotion: `{emotion_label.capitalize()}`")
 
-    # Emotion to genre mapping
     emotion_to_genre = {
         "admiration": "tamil feel good", "amusement": "tamil comedy", "anger": "tamil energetic",
         "annoyance": "tamil intense", "approval": "tamil motivation", "caring": "tamil melody",
@@ -57,7 +54,6 @@ if st.button("🎙️ Start Recording (7 seconds)"):
     genre = emotion_to_genre.get(emotion_label, "tamil chill")
 
 
-    # Spotify integration
     with st.spinner("🔍 Searching Spotify for matching playlists..."):
         token = get_spotify_token(CLIENT_ID, CLIENT_SECRET)
     
@@ -76,6 +72,5 @@ if st.button("🎙️ Start Recording (7 seconds)"):
         st.warning("⚠️ No playlist found for this emotion on Spotify.")
 
 
-    # Clean up
     if os.path.exists(audio_file):
         os.remove(audio_file)

@@ -10,7 +10,7 @@ def transcribe_audio(filename):
     subprocess.run([
         "whisper", base_filename,
         "--language", "ta",
-        "--model", "medium"
+        "--model", "large"
     ], cwd=folder, check=True)
 
     text_filename = os.path.join(folder, os.path.splitext(base_filename)[0] + ".txt")
