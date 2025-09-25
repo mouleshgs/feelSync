@@ -10,11 +10,11 @@ load_dotenv()
 CLIENT_ID = os.getenv("SPOTIFY_CLIENT_ID")
 CLIENT_SECRET = os.getenv("SPOTIFY_CLIENT_SECRET")
 
-st.set_page_config(page_title="FeelSync 🎧", layout="centered")
+st.set_page_config(page_title="FeelSync ", layout="centered")
 
 
 
-st.markdown("<h1 style='text-align: center; color: #1ED760;'>🎧 FeelSync: Emotion-Based Tamil Music Recommender</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: #1ED760;'>FeelSync: Emotion-Based Tamil Music Recommender</h1>", unsafe_allow_html=True)
 st.markdown("---")
 
 if st.button("🎙️ Start Recording (7 seconds)"):
@@ -28,16 +28,16 @@ if st.button("🎙️ Start Recording (7 seconds)"):
     with st.spinner("📝 Transcribing and Translating Tamil to English..."):
         tamil_text, english_text = transcribe_audio(audio_file)
 
-    st.markdown("### 🗣️ Transcription Output")
-    st.markdown(f"**📝 Tamil Text:** `{tamil_text}`")
-    st.markdown(f"**🌍 English Translation:** `{english_text}`")
+    st.markdown("### Transcription Output:")
+    st.markdown(f"** Tamil Text:** `{tamil_text}`")
+    st.markdown(f"** English Translation:** `{english_text}`")
     st.markdown("---")
 
-    with st.spinner("🎭 Detecting emotion from translated text..."):
+    with st.spinner("Detecting emotion from translated text..."):
         classifier = get_emotion_classifier()
         emotion_label = classify_emotion(classifier, english_text)
 
-    st.markdown(f"### 🎭 Detected Emotion: `{emotion_label.capitalize()}`")
+    st.markdown(f"### Detected Emotion: `{emotion_label.capitalize()}`")
 
     emotion_to_genre = {
         "admiration": "tamil feel good", "amusement": "tamil comedy", "anger": "tamil energetic",
