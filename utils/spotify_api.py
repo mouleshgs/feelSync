@@ -11,6 +11,11 @@ def search_playlist_by_genre(genre, access_token):
     headers = {"Authorization": f"Bearer {access_token}"}
     response = requests.get(url, headers=headers)
     playlists = response.json().get("playlists", {}).get("items", [])
+    
     if playlists:
-        return playlists[0]["external_urls"]["spotify"]
-    return None
+        playlist = playlists[0]
+        playlist_url = playlist["external_urls"]["spotify"]
+        image_url = playlist["images"][0]["url"] if playlist["images"] else None
+        return playlist_url, image_url
+    
+    return None, None
