@@ -3,6 +3,9 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+.streamlit
+*.toml
+
 # C extensions
 *.so
 

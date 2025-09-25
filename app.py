@@ -7,6 +7,10 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()
+
+os.environ["SPOTIFY_CLIENT_ID"] = st.secrets["spotify"]["client_id"]
+os.environ["SPOTIFY_CLIENT_SECRET"] = st.secrets["spotify"]["client_secret"]
+
 CLIENT_ID = os.getenv("SPOTIFY_CLIENT_ID")
 CLIENT_SECRET = os.getenv("SPOTIFY_CLIENT_SECRET")
 
@@ -29,8 +33,8 @@ if st.button("🎙️ Start Recording (7 seconds)"):
         tamil_text, english_text = transcribe_audio(audio_file)
 
     st.markdown("### Transcription Output:")
-    st.markdown(f"** Tamil Text:** `{tamil_text}`")
-    st.markdown(f"** English Translation:** `{english_text}`")
+    st.markdown(f"**Tamil Text:** `{tamil_text}`")
+    st.markdown(f"**English Translation:** `{english_text}`")
     st.markdown("---")
 
     with st.spinner("Detecting emotion from translated text..."):
@@ -73,4 +77,8 @@ if st.button("🎙️ Start Recording (7 seconds)"):
 
 
     if os.path.exists(audio_file):
+        print(audio_file)
+        
+        filename = os.path.basename(audio_file)
+        print(filename)
         os.remove(audio_file)
