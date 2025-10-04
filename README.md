@@ -1,10 +1,10 @@
-# FeelSync 🎵
+# FeelSync 
 
 **Emotion-Based Tamil Song Recommender using Voice Input**
 
 FeelSync is an innovative AI-powered application that analyzes your emotions through Tamil voice input and recommends personalized Tamil music playlists from Spotify. The system combines advanced speech recognition, natural language processing, and emotion detection to create a seamless music discovery experience.
 
-## 🚀 Features
+## Features
 
 - **Voice Input Recording**: Records 7-second Tamil audio clips using your microphone
 - **Speech-to-Text Transcription**: Converts Tamil speech to text using OpenAI's Whisper model
@@ -14,7 +14,7 @@ FeelSync is an innovative AI-powered application that analyzes your emotions thr
 - **Spotify Integration**: Searches and recommends relevant Tamil playlists from Spotify
 - **User-Friendly Interface**: Clean and intuitive Streamlit web application
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 ### Core Technologies
 - **Python**: Primary programming language
@@ -33,7 +33,7 @@ FeelSync is an innovative AI-powered application that analyzes your emotions thr
 - `scipy`: Audio file processing
 - `streamlit`: Web interface development
 
-## 📋 Requirements
+## Requirements
 
 All dependencies are listed in `requirements.txt`. Key requirements include:
 
@@ -49,7 +49,7 @@ scipy==1.15.3
 python-dotenv==1.1.0
 ```
 
-## 🔧 Installation & Setup
+## Installation & Setup
 
 ### 1. Clone the Repository
 ```bash
@@ -79,7 +79,7 @@ client_secret = "your_spotify_client_secret"
 streamlit run app.py
 ```
 
-## 🎯 How It Works
+## How It Works
 
 ### 1. Voice Input Processing
 - User clicks the recording button to capture 7 seconds of Tamil speech
@@ -116,7 +116,7 @@ emotion_to_genre = {
 - Searches for Tamil playlists matching the detected emotion genre
 - Returns playlist URL and cover image for user interaction
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 feelSync/
@@ -131,7 +131,7 @@ feelSync/
     └── spotify_api.py         # Spotify API integration
 ```
 
-## 🎭 Supported Emotions
+## Supported Emotions
 
 The system recognizes 27+ emotions including:
 - **Positive**: Joy, Love, Excitement, Gratitude, Optimism, Pride
@@ -139,7 +139,7 @@ The system recognizes 27+ emotions including:
 - **Complex**: Curiosity, Surprise, Nervousness, Embarrassment, Confusion
 - **Social**: Caring, Admiration, Approval, Disapproval
 
-## 🎵 Music Genre Categories
+## Music Genre Categories
 
 Tamil music genres mapped to emotions:
 - **Feel Good**: Joy, Relief, Gratitude
@@ -151,7 +151,7 @@ Tamil music genres mapped to emotions:
 - **Celebration**: Excitement
 - **Calm**: Grief, Remorse
 
-## 🔍 API Integration
+## API Integration
 
 ### Spotify Web API
 - **Authentication**: Client Credentials OAuth flow
@@ -164,7 +164,7 @@ Tamil music genres mapped to emotions:
 - **Language**: Tamil (ta) specification
 - **Output**: Text transcription files
 
-## 🚦 Usage Instructions
+## Usage Instructions
 
 1. **Start the Application**: Run `streamlit run app.py`
 2. **Record Audio**: Click "🎙️ Start Recording" and speak in Tamil for 7 seconds
@@ -172,40 +172,17 @@ Tamil music genres mapped to emotions:
 4. **Emotion Detection**: Review the detected emotion category
 5. **Music Recommendation**: Click the Spotify playlist link to start listening
 
-## 🔒 Privacy & Security
+## Privacy & Security
 
 - **Temporary Audio Storage**: Audio files are automatically deleted after processing
 - **No Data Persistence**: Voice recordings are not permanently stored
 - **API Security**: Spotify credentials are managed through Streamlit secrets
 - **Local Processing**: Most processing happens locally except for API calls
 
-## 🤝 Contributing
 
-Contributions are welcome! Areas for improvement:
-- Additional Tamil dialect support
-- Enhanced emotion detection accuracy
-- Extended music genre categories
-- UI/UX improvements
-- Performance optimization
-
-## 📝 License
-
-This project is open source. Please check the repository for license details.
-
-## 🔗 Links
+## Links
 
 - **Repository**: [https://github.com/mouleshgs/feelSync](https://github.com/mouleshgs/feelSync)
 - **Spotify Developer**: [https://developer.spotify.com/](https://developer.spotify.com/)
 - **Whisper Documentation**: [https://openai.com/research/whisper](https://openai.com/research/whisper)
 
-## 🙏 Acknowledgments
-
-- **OpenAI Whisper** for advanced speech recognition
-- **Hugging Face** for emotion classification models
-- **Spotify** for music streaming API access
-- **Streamlit** for rapid web application development
-
----
-
-**Created by**: [mouleshgs](https://github.com/mouleshgs)  
-**Tags**: #spotify-api #whisper #nlp-machine-learning #tamil-music #emotion-detection
